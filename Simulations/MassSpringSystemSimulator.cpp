@@ -21,6 +21,7 @@ struct Spring
 std::vector<MassPoint> v_massPoints;
 std::vector<Spring> v_springs;
 
+// Constructors
 MassSpringSystemSimulator::MassSpringSystemSimulator()
 {
 	m_iTestCase = 0;
@@ -105,13 +106,13 @@ void MassSpringSystemSimulator::setDampingFactor(float damping)
 
 int MassSpringSystemSimulator::addMassPoint(Vec3 position, Vec3 Velocity, bool isFixed)
 {
-	v_massPoints.push_back({position, Velocity,isFixed});
+	v_massPoints.push_back({position, Velocity, isFixed});
 	return v_massPoints.size() - 1;
 };
 
 void MassSpringSystemSimulator::addSpring(int masspoint1, int masspoint2, float initialLength)
 {
-	v_springs.push_back({masspoint1,masspoint2,initialLength});
+	v_springs.push_back({masspoint1, masspoint2, initialLength});
 };
 
 int MassSpringSystemSimulator::getNumberOfMassPoints()
